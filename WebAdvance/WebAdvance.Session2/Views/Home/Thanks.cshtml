@@ -1,0 +1,30 @@
+﻿@model WebAdvance.Session2.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <div>
+        @if (Model.WillAttend == null)
+        {
+            <h1>Please answer RSVP Form</h1>
+        }
+        else if ((bool)Model.WillAttend)
+        {
+            <h1>Welcome to the party</h1>
+        }
+        else
+        {
+            <h1>Sorry to hear that</h1>
+        }
+    </div>
+</body>
+</html>

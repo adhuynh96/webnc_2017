@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <h2>Hello @ViewBag.Student</h2>
+    @*<a href="/Home/RSVPForm" asp-name="Name">Click here to register</a>*@
+    @Html.ActionLink("Click here to register","RSVPForm")
+</body>
+
+</html>
+
