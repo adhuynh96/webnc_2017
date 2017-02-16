@@ -1,63 +1,47 @@
 ﻿@model WebAdvance.Session2.Models.GuestResponse
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>RSVPForm</title>
-</head>
-<body>
-    @using (Html.BeginForm())
-    {
-       
+    <form action="RSVPForm" method="post">
         <div class="form-horizontal">
-            <h4>GuestResponse</h4>
-            <hr />           
-            <div class="form-group">               
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <h4>Guest Response</h4>
+            <hr />
+            <div class="form-group">
+                <label for="Name" class="control-label col-md-2">Name:</label>                
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    <input id="Name" name="Name" type="text" class="form-control" />                   
                 </div>
             </div>
-    
             <div class="form-group">
-                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label for="Email" class="control-label col-md-2">Email:</label> 
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                 </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-     
+                    <input id="Email" name="Email" type="text" class="form-control" />
                 </div>
             </div>
-    
+
             <div class="form-group">
-                @Html.LabelFor(model => model.WillAttend, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label for="Phone" class="control-label col-md-2">Phone:</label> 
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.WillAttend, new { htmlAttributes = new { @class = "form-control" } })
-                   
+                    <input id="Phone" name="Phone" type="text" class="form-control" />
                 </div>
             </div>
-    
+
+            <div class="form-group">
+                <label for="WillAttend" class="control-label col-md-2">Will Attend:</label>
+                <div class="col-md-10">
+                    <select class="form-control list-box" id="WillAttend" name="WillAttend">
+                        <option selected="selected" value="">Not Set</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </div>
         </div>
-    }
-    
+    </form>    
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to Home", "Index")
     </div>
-</body>
-</html>
