@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAdvance.Session2", "WebA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAdvance.Session3", "WebAdvance.Session3\WebAdvance.Session3.csproj", "{F803A70B-AF3D-4DBA-B278-F63F083F593B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAdvance.Assignment", "WebAdvance.Assignment\WebAdvance.Assignment.csproj", "{D95A1207-34D4-49D1-B3AA-1C4686D02AC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F803A70B-AF3D-4DBA-B278-F63F083F593B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F803A70B-AF3D-4DBA-B278-F63F083F593B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F803A70B-AF3D-4DBA-B278-F63F083F593B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D95A1207-34D4-49D1-B3AA-1C4686D02AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D95A1207-34D4-49D1-B3AA-1C4686D02AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D95A1207-34D4-49D1-B3AA-1C4686D02AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D95A1207-34D4-49D1-B3AA-1C4686D02AC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
