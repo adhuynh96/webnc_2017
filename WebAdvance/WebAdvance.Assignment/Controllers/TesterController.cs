@@ -13,6 +13,9 @@ namespace WebAdvance.Assignment.Controllers
         // GET: Tester
         public ActionResult Index()
         {
+            //
+            //
+            //
             Tester tester = new Tester();             
             return View(tester);
         }
