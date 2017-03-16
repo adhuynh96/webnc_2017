@@ -1,89 +1,57 @@
-﻿@model WebAdvance.Assignment.Models.Tester
+﻿@model IEnumerable<WebAdvance.Assignment.Core.Membership.Tester>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Tester Management</h2>
+<h2>Index</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th></th>
+    </tr>
 
-<form action="/Tester" method="post">
-       <div class="form-horizontal">
-        <h4>Add Tester</h4>
-        <hr>
-        @if (ViewBag.Message!=null)
-        { 
-           <div class="alert alert-success" role="alert">@ViewBag.Message</div>
-        }
-        <div class="form-group">
-            <label class="control-label col-md-2" for="UserName">User Name</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" 
-                       data-val="true" data-val-regex="Letters and Numbers only" 
-                       data-val-regex-pattern="([a-zA-Z0-9])*" 
-                       data-val-required="The UserName field is required." 
-                       id="UserName" name="UserName" type="text" value="">
-                <span class="field-validation-valid text-danger" 
-                      data-valmsg-for="UserName" data-valmsg-replace="true"></span>
-            </div>
-        </div>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Password">Password</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" 
-                       data-val="true" data-val-length="The field Password must be a string with a minimum length of 7 and a maximum length of 100." 
-                       data-val-length-max="100" data-val-length-min="4" 
-                       data-val-required="The Password field is required." 
-                       id="Password" name="Password" type="text" value="">
-                <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="FullName">Full Name</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="FullName" name="FullName" type="text" value="">
-                <span class="field-validation-valid text-danger" 
-                      data-valmsg-for="FullName" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Email">Email</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" 
-                       data-val="true" data-val-email="The Email field is not a valid e-mail address." 
-                       data-val-required="The Email field is required." 
-                       id="Email" name="Email" type="email" value="">
-                <span class="field-validation-valid text-danger" 
-                      data-valmsg-for="Email" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Phone">Phone</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" 
-                       data-val="true" data-val-regex="Numbers only" 
-                       data-val-regex-pattern="([0-9])*" id="Phone" name="Phone" type="text" value="">
-                <span class="field-validation-valid text-danger" 
-                      data-valmsg-for="Phone" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default">
-            </div>
-        </div>
-    </div>
-</form>
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</table>
